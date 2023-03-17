@@ -5,16 +5,14 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  // Your code goes here...
+    // Your code goes here...
     return data.planets.reduce((acc, cur) => {
-        if(cur.moonsCount){
-            acc += cur.moonsCount
+        if (cur.moonsCount) {
+            acc += cur.moonsCount;
         }
-        return acc
-    }, 0)
+        return acc;
+    }, 0);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

@@ -1,37 +1,27 @@
 export function minBy(array, cb) {
-    let min = array[0] 
-    for (const person of array) {
-        let val = cb(person)
-        let targetProp
-        for(const prop in person){
-            if(person[prop] === val){
-                targetProp = prop
-            }
-        }
-        if(val < min[targetProp]){
-            min = person
-        }
+  if (array.length === 0) return undefined;
+  let minValue = cb(array[0]);
+  let minElement = array[0];
+  for (let i = 1; i < array.length; i++) {
+    const value = cb(array[i]);
+    if (value < minValue) {
+      minValue = value;
+      minElement = array[i];
     }
-    return min
+  }
+  return minElement;
 }
 
 export function maxBy(array, cb) {
-    let max = array[0] 
-    for (const person of array) {
-        let val = cb(person)
-        let targetProp
-        for(const prop in person){
-            if(person[prop] === val){
-                targetProp = prop
-            }
-        }
-        let compareVal = max[targetProp]
-        if(typeof val !== typeof person[targetProp]){
-            compareVal = person[targetProp].length
-        }
-        if(val > compareVal){ 
-            max = person
-        }
+  if (array.length === 0) return undefined;
+  let maxValue = cb(array[0]);
+  let maxElement = array[0];
+  for (let i = 1; i < array.length; i++) {
+    const value = cb(array[i]);
+    if (value > maxValue) {
+      maxValue = value;
+      maxElement = array[i];
     }
-    return max 
+  }
+  return maxElement;
 }

@@ -5,17 +5,15 @@ import { data } from "../data/data";
 // Return example: ['name1', 'name2', ... , 'nameN']
 
 export function getPlanetsWithMassValue(data, number) {
-  // Your code goes here...
-        let result = []
-    data.planets.map(item => {
-        if(item.mass.massValue > number){
-            result.push(item.name)
+    // Your code goes here...
+    let result = [];
+    data.planets.map((item) => {
+        if (item.mass.massValue > number) {
+            result.push(item.name);
         }
-    })
-    return result
+    });
+    return result;
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

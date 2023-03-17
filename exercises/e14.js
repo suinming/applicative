@@ -5,11 +5,9 @@ import { data } from "../data/data";
 // Return example: 234234.234
 
 export function getOrbitalPeriodsSum(data) {
-  // Your code goes here...
-return data.asteroids.reduce((acc, cur) =>acc + cur.orbitalPeriod ,0)
+    // Your code goes here...
+    return data.asteroids.reduce((acc, cur) => acc + cur.orbitalPeriod, 0);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"
