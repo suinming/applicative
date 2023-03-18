@@ -6,8 +6,8 @@ import { data } from "../data/data";
 
 export function findPlanetNameByMoon(data, moonName) {
     // Your code goes here...
-    let planet = data.planets.find((planet) => planet.moons.includes(moonName));
-    return planet.name;
+    // handle the condition that planet doesn't have moon
+    return data.planets.find((planet) => planet.moons && planet.moons.includes(moonName)).name;
 }
 
 // === TEST YOURSELF ===

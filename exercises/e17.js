@@ -1,27 +1,23 @@
 export function minBy(array, cb) {
-  if (array.length === 0) return undefined;
-  let minValue = cb(array[0]);
-  let minElement = array[0];
-  for (let i = 1; i < array.length; i++) {
-    const value = cb(array[i]);
-    if (value < minValue) {
-      minValue = value;
-      minElement = array[i];
+    if (array.length === 0) return undefined;
+    let minElement = array[0];
+
+    for (let item of array) {
+        if (cb(item) < cb(minElement)) {
+            minElement = item;
+        }
     }
-  }
-  return minElement;
+    return minElement;
 }
 
 export function maxBy(array, cb) {
-  if (array.length === 0) return undefined;
-  let maxValue = cb(array[0]);
-  let maxElement = array[0];
-  for (let i = 1; i < array.length; i++) {
-    const value = cb(array[i]);
-    if (value > maxValue) {
-      maxValue = value;
-      maxElement = array[i];
+    if (array.length === 0) return undefined;
+    let maxElement = array[0];
+
+    for (let item of array) {
+        if (cb(item) > cb(maxElement)) {
+            maxElement = item;
+        }
     }
-  }
-  return maxElement;
+    return maxElement;
 }
